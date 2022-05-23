@@ -22,8 +22,8 @@ cat $url/subfinder/alive.txt
 
 echo "[+] Probing for alive domains..."
 cat $url/subfinder/Final.txt | sort -u | httpx | tee $url/subfinder/httpx.txt
-sort -u $url/subfinder/httprobe/a.txt > $url/subfinder/httprobe/alive.txt
-rm $url/subfinder/httprobe/a.txt
+sort -u $url/subfinder/httpx/a.txt > $url/subfinder/httpx/alive.txt
+rm $url/subfinder/httpx/a.txt
 
 echo "[+] Scanning for open ports..."
-cat $url/subfinder/httprobe/alive.txt | waybackurls | tee $url/subfinder/httprobe/wayback.txt
+cat $url/subfinder/httpx/alive.txt | waybackurls | tee $url/subfinder/httpx/wayback.txt
