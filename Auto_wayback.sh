@@ -21,7 +21,7 @@ fi
 
  
 echo "[+] Harvesting subdomain with subdomain"
-subdomain -d $url >> $url/subdomain/asset.txt
+subfinder -d $url >> $url/subdomain/asset.txt
 cat $url/subdomain/alive.txt 
 
 echo "[+] Probing for alive domains..."
@@ -31,3 +31,4 @@ rm $url/subdomain/httpx/a.txt
 
 echo "[+] Scanning for open ports..."
 cat $url/subdomain/httpx/alive.txt | waybackurls | tee $url/subdomain/httpx/wayback.txt
+
